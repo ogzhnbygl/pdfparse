@@ -49,6 +49,10 @@ Or install it in Claude Code as a plugin — this repository is also a plugin ma
 Also listed on [ClawHub](https://clawhub.ai/ogzhnbygl/skills/pdfparse), where the
 directory requires MIT-0 for listed skills; this repository stays MIT.
 
+```
+openclaw skills install @ogzhnbygl/pdfparse
+```
+
 Always invoke the scripts through the bundled wrapper:
 
 ```bash
