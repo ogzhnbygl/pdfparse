@@ -39,6 +39,13 @@ Copy this folder into your skills directory:
 - **Cherry Studio** — `…/CherryStudio/Data/Skills/pdfparse/`
 - **Claude Code** — `~/.claude/skills/pdfparse/`
 
+Or install it in Claude Code as a plugin — this repository is also a plugin marketplace:
+
+```
+/plugin marketplace add ogzhnbygl/pdfparse
+/plugin install pdfparse@ogzhnbygl
+```
+
 Always invoke the scripts through the bundled wrapper:
 
 ```bash
@@ -142,9 +149,11 @@ Builds synthetic PDFs and checks the version stamp, `--keep-names`, empty/scanne
 ## Releasing (maintainers)
 
 1. Bump `__version__` in `scripts/pdf_to_clean_md.py`
-2. Add a `CHANGELOG.md` entry under the new version
-3. Run `scripts/run.sh scripts/self_test.py`
-4. Commit, tag `vX.Y.Z`, push; confirm CI is green
+2. Bump the same version in `.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`
+   — Claude Code only replaces files when the computed version changes
+3. Add a `CHANGELOG.md` entry under the new version
+4. Run `scripts/run.sh scripts/self_test.py`
+5. Commit, tag `vX.Y.Z`, push; confirm CI is green
 
 The version string is how users and update tooling detect a release — a commit without a
 version bump is invisible to them.
